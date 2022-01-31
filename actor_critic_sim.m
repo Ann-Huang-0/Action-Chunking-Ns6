@@ -90,26 +90,41 @@ function simdata = actor_critic_sim(agent, data, incentives, cond)
                 beta = max(min(beta,50),0);
             end
 
-            if ~inChunk % update theta and Q regularly
+            % we use the Boolean variable inChunk to track whether the agent is executing a chunk
+            if ~inChunk % if not in chunk, update theta(s,a) and Q(s,a) as we normally would
                 g = rpe*beta*(1 - policy(a));   
                 theta(s,a) = theta(s,a) + agent.lrate_theta*g;             
                 Q(s,a) = Q(s,a) + agent.lrate_V*(beta*r-cost-Q(s,a));
                 V(s) = V(s) + agent.lrate_V*rpe;  
                 p = p + agent.lrate_p*(policy - p); p = p./sum(p);
-                if a==chunk(1) % if indiv state is selected and is also CIS, then chunk also gets updated
+                if a==chunk(1) % if the primitive action corresponds to the CI action is selected, also update the chunk
+                               % rationale: if we only look at the current step, selecting the primitive CI action
+                               % and selecting the chunk both earn us the same reward, therefore they should be
+                               % assigned the same credit
                     theta(s,nA) = theta(s,nA) + agent.lrate_theta*g;
                     Q(s,nA) = Q(s,nA) + agent.lrate_V*(beta*r-cost-Q(s,a));
                 end
-            else
-                if chunkStep==2 % only update theta and Q after the chunk is done
-                    s_prev = simdata.s(idx(t-1));
-                    r_chunk = (simdata.r(idx(t-1))==1 && r==1); if r_chunk==0; r_chunk=-1; end
-                    rpe_chunk = beta*r_chunk - simdata.cost(idx(t-1)) - V(s_prev);
+
+            else        % if currently in chunk
+                if chunkStep==2 % update theta and Q only after the chunk is done
+                    s_prev = simdata.s(idx(t-1)); % s_prev becuase we made the decision to execute the chunk in s(t-1)
+                    r_chunk = (simdata.r(idx(t-1))==1 && r==1);  % r_chunk is the total reward for the entire chunk!!
+
+                    % If the chunk perfectly corresponds to two consecutive states, there would be a positive reward of 1;
+                    % otherwise, there is a negative reward to punish the execution of chunk becuase S(t-1) and S(t) do not
+                    % usually appear together.
+                    % Regard the r_chunk as measuring the ASSOCIATION between S(t-1) and S(t) !!
+                    if r_chunk==0; r_chunk=-1; end             
+                                      
+                    rpe_chunk = beta*r_chunk - simdata.cost(idx(t-1)) - V(s_prev); % rpe of executing the chunk in the previous step
                     g_chunk = rpe_chunk*beta*(1-policy_prev(nA));
-                    theta(s_prev,nA) = theta(s_prev,nA) +agent.lrate_theta*(g_chunk);  
+                    theta(s_prev,nA) = theta(s_prev,nA) +agent.lrate_theta*(g_chunk);  % "backprop" the credit of chunk to the previous state
                     Q(s_prev,nA) = Q(s_prev,nA) + agent.lrate_V*(beta*r_chunk-simdata.cost(idx(t-1))-Q(s_prev,a));
                     V(s_prev) = V(s_prev) + agent.lrate_V*rpe_chunk;  
                     p = p + agent.lrate_p*(policy - p); p = p./sum(p);
+
+                    % note that here we do not update policy parameters for the current step, becuase at the current step we have
+                    % no autonomy in terms of selecting an action according to the poliy; we're just following the chunk execution
                 end
             end
 

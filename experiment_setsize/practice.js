@@ -1,16 +1,16 @@
 var baseline_stimulus_Ns6 = [
-  { baseline_stimulus_Ns6: 'img/animals/control/S1.jpg', data_Ns6:{state: 1, test_part:'Ns6,baseline', correct_response:49}},
-  { baseline_stimulus_Ns6: 'img/animals/control/S2.jpg', data_Ns6:{state: 2, test_part:'Ns6,baseline', correct_response:50}},
-  { baseline_stimulus_Ns6: 'img/animals/control/S3.jpg', data_Ns6:{state: 3, test_part:'Ns6,baseline', correct_response:51}},
-  { baseline_stimulus_Ns6: 'img/animals/control/S4.jpg', data_Ns6:{state: 4, test_part:'Ns6,baseline', correct_response:52}},
-  { baseline_stimulus_Ns6: 'img/animals/control/S5.jpg', data_Ns6:{state: 5, test_part:'Ns6,baseline', correct_response:53}},
-  { baseline_stimulus_Ns6: 'img/animals/control/S6.jpg', data_Ns6:{state: 6, test_part:'Ns6,baseline', correct_response:54}}];
+  { baseline_stimulus_Ns6: 'img/animals/control/S1.jpg', data_Ns6:{state: 1, test_part:'Ns6,random_train', correct_response:49}},
+  { baseline_stimulus_Ns6: 'img/animals/control/S2.jpg', data_Ns6:{state: 2, test_part:'Ns6,random_train', correct_response:50}},
+  { baseline_stimulus_Ns6: 'img/animals/control/S3.jpg', data_Ns6:{state: 3, test_part:'Ns6,random_train', correct_response:51}},
+  { baseline_stimulus_Ns6: 'img/animals/control/S4.jpg', data_Ns6:{state: 4, test_part:'Ns6,random_train', correct_response:52}},
+  { baseline_stimulus_Ns6: 'img/animals/control/S5.jpg', data_Ns6:{state: 5, test_part:'Ns6,random_train', correct_response:53}},
+  { baseline_stimulus_Ns6: 'img/animals/control/S6.jpg', data_Ns6:{state: 6, test_part:'Ns6,random_train', correct_response:54}}];
 
 var baseline_stimulus_Ns4 = [
-  { baseline_stimulus_Ns4: 'img/nature/control/S1.jpg', data_Ns4:{state: 1, test_part:'Ns4,baseline', correct_response:49}},
-  { baseline_stimulus_Ns4: 'img/nature/control/S2.jpg', data_Ns4:{state: 2, test_part:'Ns4,baseline', correct_response:50}},
-  { baseline_stimulus_Ns4: 'img/nature/control/S3.jpg', data_Ns4:{state: 3, test_part:'Ns4,baseline', correct_response:51}},
-  { baseline_stimulus_Ns4: 'img/nature/control/S4.jpg', data_Ns4:{state: 4, test_part:'Ns4,baseline', correct_response:52}}];
+  { baseline_stimulus_Ns4: 'img/nature/control/S1.jpg', data_Ns4:{state: 1, test_part:'Ns4,random_train', correct_response:49}},
+  { baseline_stimulus_Ns4: 'img/nature/control/S2.jpg', data_Ns4:{state: 2, test_part:'Ns4,random_train', correct_response:50}},
+  { baseline_stimulus_Ns4: 'img/nature/control/S3.jpg', data_Ns4:{state: 3, test_part:'Ns4,random_train', correct_response:51}},
+  { baseline_stimulus_Ns4: 'img/nature/control/S4.jpg', data_Ns4:{state: 4, test_part:'Ns4,random_train', correct_response:52}}];
 
 var baseline_trial_Ns6 = {
 	type: 'image-keyboard-response',

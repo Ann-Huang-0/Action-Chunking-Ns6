@@ -20,8 +20,8 @@ function exploratory_analysis_exp1(plotCase, data)
     if nargin==1; load('actionChunk_data.mat'); end
     nSubj = length(data);
 
-    condition = {'Ns4,baseline', 'Ns4,train', 'Ns4,perform', 'Ns4,test',...
-        'Ns6,baseline', 'Ns6,train', 'Ns6,perform', 'Ns6,test'};
+    condition = {'Ns4,random_train', 'Ns4,structured_train', 'Ns4,structured_test', 'Ns4,random_test',...
+        'Ns6,random_train', 'Ns6,structured_train', 'Ns6,structured_test', 'Ns6,structured_test'};
 
      bmap =[141 182 205   
             255 140 105

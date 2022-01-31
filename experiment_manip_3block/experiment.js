@@ -17,7 +17,6 @@ for (let i=0; i<freq_chunk_structures.length; i++){
   }
 }
 
-
 console.log("Frequent chunk transition: " + freq_chunk_structures);
 console.log("Rare chunk transition: " + rare_chunk_structures);
 
@@ -38,11 +37,15 @@ var timeline = [];
 var consent_block = create_consent();
 timeline.push(consent_block); 
 
-
 var trial_node_id = '';
 var structured_idx = 0;
 var stateDist = [0, 0, 0, 0, 0];
 timeline.push(instructions);
+
+// Practice round
+timeline.push(create_practice_block());
+timeline.push(finish_practice_block());
+
 for (let i=1; i<4; i++){
   timeline.push(present_pictures(i));
   if (label[i-1]=='structured_incentive'){
@@ -77,6 +80,7 @@ timeline.push(end_block);
 images = ['img/set1/S1.jpg', 'img/set1/S2.jpg', 'img/set1/S3.jpg', 'img/set1/S4.jpg',
           'img/set2/S1.jpg', 'img/set2/S2.jpg', 'img/set2/S3.jpg', 'img/set2/S4.jpg',
           'img/set3/S1.jpg', 'img/set3/S2.jpg', 'img/set3/S3.jpg', 'img/set3/S4.jpg',
+          'img/practice/S1.jpg', 'img/practice/S2.jpg', 'img/practice/S3.jpg', 'img/practice/S4.jpg',
           'img/fingerPosition.png', 'img/sample_picture.png'];
 
 jsPsych.pluginAPI.preloadImages(images, function () {startExperiment();});

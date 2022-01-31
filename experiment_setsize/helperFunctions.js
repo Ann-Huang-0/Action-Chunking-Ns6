@@ -2,46 +2,46 @@
 
 // import images
 var Ns4_perform = [
-  { stimulus: 'img/nature/S1.jpg', data:{state:1, test_part:'Ns4,perform', correct_response:49} },
-  { stimulus: 'img/nature/S2.jpg', data:{state:2, test_part:'Ns4,perform', correct_response:50} },
-  { stimulus: 'img/nature/S3.jpg', data:{state:3, test_part:'Ns4,perform', correct_response:51} },
-  { stimulus: 'img/nature/S4.jpg', data:{state:4, test_part:'Ns4,perform', correct_response:52} } ];
+  { stimulus: 'img/nature/S1.jpg', data:{state:1, test_part:'Ns4,structured_test', correct_response:49} },
+  { stimulus: 'img/nature/S2.jpg', data:{state:2, test_part:'Ns4,structured_test', correct_response:50} },
+  { stimulus: 'img/nature/S3.jpg', data:{state:3, test_part:'Ns4,structured_test', correct_response:51} },
+  { stimulus: 'img/nature/S4.jpg', data:{state:4, test_part:'Ns4,structured_test', correct_response:52} } ];
 
 var Ns4_train = [
-  { stimulus: 'img/nature/S1.jpg', data:{state:1, test_part:'Ns4,train', correct_response:49} },
-  { stimulus: 'img/nature/S2.jpg', data:{state:2, test_part:'Ns4,train', correct_response:50} },
-  { stimulus: 'img/nature/S3.jpg', data:{state:3, test_part:'Ns4,train', correct_response:51} },
-  { stimulus: 'img/nature/S4.jpg', data:{state:4, test_part:'Ns4,train', correct_response:52} } ];
+  { stimulus: 'img/nature/S1.jpg', data:{state:1, test_part:'Ns4,structured_train', correct_response:49} },
+  { stimulus: 'img/nature/S2.jpg', data:{state:2, test_part:'Ns4,structured_train', correct_response:50} },
+  { stimulus: 'img/nature/S3.jpg', data:{state:3, test_part:'Ns4,structured_train', correct_response:51} },
+  { stimulus: 'img/nature/S4.jpg', data:{state:4, test_part:'Ns4,structured_train', correct_response:52} } ];
 
 var Ns4_test = [
-  { stimulus: 'img/nature/S1.jpg', data:{state:1, test_part:'Ns4,test', correct_response:49} },
-  { stimulus: 'img/nature/S2.jpg', data:{state:2, test_part:'Ns4,test', correct_response:50} },
-  { stimulus: 'img/nature/S3.jpg', data:{state:3, test_part:'Ns4,test', correct_response:51} },
-  { stimulus: 'img/nature/S4.jpg', data:{state:4, test_part:'Ns4,test', correct_response:52} } ];
+  { stimulus: 'img/nature/S1.jpg', data:{state:1, test_part:'Ns4,random_test', correct_response:49} },
+  { stimulus: 'img/nature/S2.jpg', data:{state:2, test_part:'Ns4,random_test', correct_response:50} },
+  { stimulus: 'img/nature/S3.jpg', data:{state:3, test_part:'Ns4,random_test', correct_response:51} },
+  { stimulus: 'img/nature/S4.jpg', data:{state:4, test_part:'Ns4,random_test', correct_response:52} } ];
 
 var Ns6_perform = [
-  { stimulus: 'img/animals/S1.jpg', data:{state:1, test_part:'Ns6,perform', correct_response:49} },
-  { stimulus: 'img/animals/S2.jpg', data:{state:2, test_part:'Ns6,perform', correct_response:50} },
-  { stimulus: 'img/animals/S3.jpg', data:{state:3, test_part:'Ns6,perform', correct_response:51} },
-  { stimulus: 'img/animals/S4.jpg', data:{state:4, test_part:'Ns6,perform', correct_response:52} }, 
-  { stimulus: 'img/animals/S5.jpg', data:{state:5, test_part:'Ns6,perform', correct_response:53} },
-  { stimulus: 'img/animals/S6.jpg', data:{state:6, test_part:'Ns6,perform', correct_response:54} } ];
+  { stimulus: 'img/animals/S1.jpg', data:{state:1, test_part:'Ns6,structured_test', correct_response:49} },
+  { stimulus: 'img/animals/S2.jpg', data:{state:2, test_part:'Ns6,structured_test', correct_response:50} },
+  { stimulus: 'img/animals/S3.jpg', data:{state:3, test_part:'Ns6,structured_test', correct_response:51} },
+  { stimulus: 'img/animals/S4.jpg', data:{state:4, test_part:'Ns6,structured_test', correct_response:52} }, 
+  { stimulus: 'img/animals/S5.jpg', data:{state:5, test_part:'Ns6,structured_test', correct_response:53} },
+  { stimulus: 'img/animals/S6.jpg', data:{state:6, test_part:'Ns6,structured_test', correct_response:54} } ];
 
 var Ns6_train = [
-  { stimulus: 'img/animals/S1.jpg', data:{state:1, test_part:'Ns6,train', correct_response:49} },
-  { stimulus: 'img/animals/S2.jpg', data:{state:2, test_part:'Ns6,train', correct_response:50} },
-  { stimulus: 'img/animals/S3.jpg', data:{state:3, test_part:'Ns6,train', correct_response:51} },
-  { stimulus: 'img/animals/S4.jpg', data:{state:4, test_part:'Ns6,train', correct_response:52} }, 
-  { stimulus: 'img/animals/S5.jpg', data:{state:5, test_part:'Ns6,train', correct_response:53} },
-  { stimulus: 'img/animals/S6.jpg', data:{state:6, test_part:'Ns6,train', correct_response:54} } ];
+  { stimulus: 'img/animals/S1.jpg', data:{state:1, test_part:'Ns6,structured_train', correct_response:49} },
+  { stimulus: 'img/animals/S2.jpg', data:{state:2, test_part:'Ns6,structured_train', correct_response:50} },
+  { stimulus: 'img/animals/S3.jpg', data:{state:3, test_part:'Ns6,structured_train', correct_response:51} },
+  { stimulus: 'img/animals/S4.jpg', data:{state:4, test_part:'Ns6,structured_train', correct_response:52} }, 
+  { stimulus: 'img/animals/S5.jpg', data:{state:5, test_part:'Ns6,structured_train', correct_response:53} },
+  { stimulus: 'img/animals/S6.jpg', data:{state:6, test_part:'Ns6,structured_train', correct_response:54} } ];
 
 var Ns6_test = [
-  { stimulus: 'img/animals/S1.jpg', data:{state:1, test_part:'Ns6,test', correct_response:49} },
-  { stimulus: 'img/animals/S2.jpg', data:{state:2, test_part:'Ns6,test', correct_response:50} },
-  { stimulus: 'img/animals/S3.jpg', data:{state:3, test_part:'Ns6,test', correct_response:51} },
-  { stimulus: 'img/animals/S4.jpg', data:{state:4, test_part:'Ns6,test', correct_response:52} },
-  { stimulus: 'img/animals/S5.jpg', data:{state:5, test_part:'Ns6,test', correct_response:53} },
-  { stimulus: 'img/animals/S6.jpg', data:{state:6, test_part:'Ns6,test', correct_response:54} } ];
+  { stimulus: 'img/animals/S1.jpg', data:{state:1, test_part:'Ns6,random_test', correct_response:49} },
+  { stimulus: 'img/animals/S2.jpg', data:{state:2, test_part:'Ns6,random_test', correct_response:50} },
+  { stimulus: 'img/animals/S3.jpg', data:{state:3, test_part:'Ns6,random_test', correct_response:51} },
+  { stimulus: 'img/animals/S4.jpg', data:{state:4, test_part:'Ns6,random_test', correct_response:52} },
+  { stimulus: 'img/animals/S5.jpg', data:{state:5, test_part:'Ns6,random_test', correct_response:53} },
+  { stimulus: 'img/animals/S6.jpg', data:{state:6, test_part:'Ns6,random_test', correct_response:54} } ];
 
 
 
@@ -317,7 +317,7 @@ function saveData(name, data) {
   var bonus_block = {
     type: 'instructions',
     pages: function() {
-      var correct_bonus = Math.round(100 * jsPsych.data.get().filter({correct: true}).count() / 700); 
+      var correct_bonus = Math.round(80 * jsPsych.data.get().filter({correct: true}).count() / 700); 
       jsPsych.data.addDataToLastTrial({"bonus": correct_bonus});
       return ['<p class="center-content">You won a bonus of <b>$' + (correct_bonus == 1 ? '10.00' : 0.1 * correct_bonus) + '</b>.</p>' +
       '<p class="center-content"> IMPORTANT: <b>Press "Next"</b> to continue to the survey questions.</p>'];
@@ -358,7 +358,7 @@ function saveData(name, data) {
     '<p class="center-content"> <b>Thank you for participating in our experiment!</b></p>' +
     '<p class="center-content"> <b>Please wait on this page for a minute while your data saves.</b></p>'+
     '<p class="center-content"> Your bonus will be applied after your data has been processed and your HIT has been approved.</p>'+
-    '<p class="center-content"> Please email zixiang_huang@fas.harvard.edu with any additional questions or concerns. You may now exit this window.</p>'
+    '<p class="center-content"> Please email lucylai@g.harvard.edu with any additional questions or concerns. You may now exit this window.</p>'
     ],
     show_clickable_nav: false,
     allow_backward: false,

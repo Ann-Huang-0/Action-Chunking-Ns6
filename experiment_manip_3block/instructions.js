@@ -41,8 +41,20 @@ var instructions = {
 
 
     '<p class="center-content">Please try your best to make the best response for each picture. We really appreciate your hard work! </p>' +
-    '<p class="center-content"><b>Please note that if you respond randomly, always press the same key, or never press, we reserve the right to withold your bonus.</b></p>'+
-    '<p class="center-content">Please click "Next" to enter the first experimental block.</p>'
+    '<p class="center-content"><b>Please note that if you respond randomly, always press the same key, or never press, we reserve the right to withold your bonus.</b></p>', 
+
+    '<p class="center-content">You will start your experiment by trying this practice round of 25 trials. </p>' +
+    '<p class="center-content">It will help you get used to the buttons and the timing. </p>'+   
+    '<p class="center-content">Here are the pictures you will see during the practice block.</p>'+
+    '<p class="center-content">Please press one of <b>S</b>,<b>D</b>,<b>H</b>,<b>J</b> on the keyboard in response to each picture.</p>'+
+    '<table style="margin-left:auto;margin-right:auto;table-layout:fixed !important; width:1000px;"><tr>' +
+    '<td><img src="img/practice/S2.jpg" style="width: 220px; height: 150px"></td>' +
+    '<td><img src="img/practice/S4.jpg" style="width: 220px; height: 150px"></td>' +
+    '<td><img src="img/practice/S1.jpg" style="width: 220px; height: 150px"></td>' +
+    '<td><img src="img/practice/S3.jpg" style="width: 220px; height: 150px"></td>' +
+    '</tr><tr>' +
+    '</tr></table>'
+
   ],
   show_clickable_nav: true,
   allow_backward: true,

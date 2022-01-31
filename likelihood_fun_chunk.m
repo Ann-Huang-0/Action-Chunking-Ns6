@@ -111,16 +111,31 @@ function [lik,latents] = likelihood_fun_chunk(x,data)
 
             %--------------------------------------------------
 
+            % calculate the log probability of taking each action under current policy
             for i = 1:setsize+1
-                if i==chunk(1)
+
+                %  Case 1: for the chunk-initiating (CI) action
+                if i==chunk(1)   
+                    % d_chunk(1) is P(CI action), d_chunk(2) is P(chunk)
                     d_chunk = zeros(2,1); d_chunk(1) = d(chunk(1)); d_chunk(2) = d(setsize+1);
+                    % P(observing the CI action) = P(CI action) + P(chunk)
                     logpolicy(i) = logsumexp(d_chunk) -logsumexp(d); 
+
+                % Case 2: if in the last step you took the CI action, then 
+                % P(at this step, observing the second action in the chunk) = p1 + p2 where 
                 elseif t>1 && data.a(t-1)==chunk(1) && i==chunk(2)
                     if ~exist('d_prev','var'); d_prev = beta * theta(data.s(t-1)) + log(p); end
                     d_chunk=zeros(2,1); d_chunk(1)=d_prev(chunk(1)); d_chunk(2)=d_prev(setsize+1);
-                    logpolicy(i) = log(exp(d(i)-logsumexp(d)) + exp(d_chunk(2)-logsumexp(d_chunk)));
+                    p1 = exp(d(i)-logsumexp(d));    % p1 = P(you're just executing the primitive action that 
+                                                         % happen to be the second action in the chunk
+                    p2 = exp(d_chunk(2)-logsumexp(d_chunk));  % p2 = P(in the last step, you started a chunk)
+                    logpolicy(i) = log(p1 + p2);             
+
+                % Case 3: for all the other actions 
+                % (or for the second action in the chunk, 
+                % but when your action in the previous step isn't the CI action)
                 else
-                    logpolicy(i) = d(i)-logsumexp(d);
+                    logpolicy(i) = d(i)-logsumexp(d);   % regular logpolicy calculation using the logsumexp trick
                 end
             end    
 
@@ -165,13 +180,15 @@ function [lik,latents] = likelihood_fun_chunk(x,data)
 
             %--------------------------------------
             % haven't implement associative learning yet
-            if a~=chunk(1)
+                                                                 
+            if a~=chunk(1)                                                      % if the action isn't the CI action
                 g = rpe*beta*(1 - policy(a));                                   % policy gradient
                 theta(s,a) = theta(s,a) + agent.lrate_theta*g;                  % policy parameter update
-            elseif a==chunk(1)
-                g_c = rpe*beta*(1 - policy(setsize+1));
+
+            elseif a==chunk(1)                                                  % if the current action is the CI action
+                g_c = rpe*beta*(1 - policy(setsize+1)); 
                 g_a = rpe*beta*(1 - policy(a) - policy(setsize+1));
-                theta(s,setsize+1) = theta(s,setsize+1) + agent.lrate_theta*g_c;
+                theta(s,setsize+1) = theta(s,setsize+1) + agent.lrate_theta*g_c; % different policy gradients
                 theta(s,a) = theta(s,a) + agent.lrate_theta*g_a;
             end
             %----------------------------------------
